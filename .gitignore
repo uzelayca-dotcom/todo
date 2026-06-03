@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Supabase yerel dosyaları
+supabase/.temp/
+supabase/.branches/
+
+# Yerel geliştirme yardımcıları
+server.py
+.claude/
