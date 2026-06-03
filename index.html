@@ -8,31 +8,72 @@
 </head>
 <body>
   <div class="container">
-    <h1>📝 Yapılacaklar</h1>
 
-    <form id="todo-form" class="todo-form">
-      <input
-        type="text"
-        id="todo-input"
-        placeholder="Yeni görev ekle..."
-        autocomplete="off"
-        required
-      >
-      <button type="submit">Ekle</button>
-    </form>
+    <!-- ============ GİRİŞ / KAYIT EKRANI ============ -->
+    <div id="auth-view">
+      <h1>📝 Yapılacaklar</h1>
+      <p class="subtitle">Devam etmek için giriş yap ya da kaydol</p>
 
-    <div class="filters">
-      <button class="filter-btn active" data-filter="all">Tümü</button>
-      <button class="filter-btn" data-filter="active">Aktif</button>
-      <button class="filter-btn" data-filter="completed">Tamamlanan</button>
+      <form id="auth-form" class="auth-form">
+        <input
+          type="email"
+          id="auth-email"
+          placeholder="E-posta adresin"
+          autocomplete="email"
+          required
+        >
+        <input
+          type="password"
+          id="auth-password"
+          placeholder="Şifre (en az 6 karakter)"
+          autocomplete="current-password"
+          minlength="6"
+          required
+        >
+        <div class="auth-buttons">
+          <button type="submit" id="login-btn">Giriş Yap</button>
+          <button type="button" id="signup-btn" class="secondary">Kaydol</button>
+        </div>
+      </form>
+
+      <div id="auth-message" class="auth-message"></div>
     </div>
 
-    <ul id="todo-list" class="todo-list"></ul>
+    <!-- ============ TODO UYGULAMASI ============ -->
+    <div id="app-view" class="hidden">
+      <div class="app-header">
+        <h1>📝 Yapılacaklar</h1>
+        <div class="user-bar">
+          <span id="user-email"></span>
+          <button id="logout-btn">Çıkış</button>
+        </div>
+      </div>
 
-    <div class="footer">
-      <span id="count">0 görev</span>
-      <button id="clear-completed">Tamamlananları sil</button>
+      <form id="todo-form" class="todo-form">
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="Yeni görev ekle..."
+          autocomplete="off"
+          required
+        >
+        <button type="submit">Ekle</button>
+      </form>
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Tümü</button>
+        <button class="filter-btn" data-filter="active">Aktif</button>
+        <button class="filter-btn" data-filter="completed">Tamamlanan</button>
+      </div>
+
+      <ul id="todo-list" class="todo-list"></ul>
+
+      <div class="footer">
+        <span id="count">0 görev</span>
+        <button id="clear-completed">Tamamlananları sil</button>
+      </div>
     </div>
+
   </div>
 
   <!-- Supabase kütüphanesi (CDN'den yükleniyor) -->
